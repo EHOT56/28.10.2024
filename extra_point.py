@@ -2,9 +2,11 @@
 
 def get_numbers():
     print("Enter numbers separated by spaces:")
-    numbers = input(">>> ")
+    numbers = ""
+    while numbers == "":
+        numbers = input(">>> ") 
     number_list = numbers.split(" ")
-    return [int(num) for num in number_list]
+    return [int(num) for num in number_list if num != ""]
 
 def calculate_average(nums):
     total = sum(nums)
@@ -14,9 +16,7 @@ def calculate_average(nums):
 def main():
     print("This program calculates the average of your input numbers.")
     numbers = get_numbers()
-
     average = calculate_average(numbers)
-
     print(f"The average is: {average}")
 
 # Run the program
